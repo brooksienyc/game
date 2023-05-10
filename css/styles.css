@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  background-color: rgb(250, 56, 63);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Crimson Text', serif;
+}
+
+#h1-alt {
+  font-family: 'Oleo Script', cursive;
+  position: relative;
+  top: -30px;
+  right: -100px;
+}
+
+#attribution_block {
+  pointer-events: none;
+}
+
+#play-btn {
+  position: relative;
+  top: -30px;
+  right: -85px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sm-hidden {
+    display: none;
+  }
+
+  #h1-main {
+    text-align: center;
+  }
+
+  #h1-alt {
+    right: 0px;
+    text-align: center;
+  }
+
+  #play-btn {
+    right: -100px;
+  }
+
+  .catButtons {
+    text-align: left;
+    margin-left: 1.5rem;
+  }
+
+  br {
+    display: none;
+  }
+}
