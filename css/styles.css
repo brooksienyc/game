@@ -34,8 +34,8 @@ h6 {
   right: -85px;
 }
 
-@media only screen and (max-width: 768px) {
-  .sm-hidden {
+@media only screen and (max-width: 1024px) {
+  .sm-hidden, .md-hidden {
     display: none;
   }
 
@@ -61,3 +61,10 @@ h6 {
     display: none;
   }
 }
+
+/* @media only screen and (max-width: 768px) {
+  #play-btn {
+    right: -100px;
+  }
+
+} */
