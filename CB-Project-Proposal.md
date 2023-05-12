@@ -1,4 +1,4 @@
-# Project Proposal Example
+# Project Proposal E[Imgur](https://i.imgur.com/RvmnK43.png)xample
 
 ## Project Choice (Tell us which project you're doing!)
 - [ ] Trivia (Self-scoring)
