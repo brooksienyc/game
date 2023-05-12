@@ -48,17 +48,7 @@ const montyPython = [
 // Category Choices
 function playClick() {
   gameCategories.innerHTML =
-    `<h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 sm-hidden pb-4'>Go Ahead and Pick A Topic!</h2>
-    <h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 lg:hidden md:hidden mx-auto'>Pick A Topic!</h2>
-    <div class='w-full border-t-2 border-solid border-black mx-8 py-4'
-      <button onclick= ${categoryClick('gc-1')} id='gc-1' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'>Monty Python
-      </button>
-      <button onclick= ${categoryClick('gc-2')} id='gc-2' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'><br>80s
-      </button>
-      <button onclick= ${categoryClick('gc-3')} id='gc-3' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'>Cult <br>Classics</button>
-      <button onclick= ${categoryClick('gc-4')}id='gc-4' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'>Mixed <br>Bag
-      </button>
-    </div>`;
+    "<h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 sm-hidden pb-4'>Go Ahead and Pick A Topic!</h2><h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 lg:hidden md:hidden mx-auto'>Pick A Topic!</h2><div class='w-full border-t-2 border-solid border-black mx-8 py-4'><button onclick= `${categoryClick('gc-1')}` id='gc-1' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'>Monty Python</button><button onclick= `${categoryClick('gc-2')}` id='gc-2' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'><br>80s</button><button onclick= `${categoryClick('gc-3')}` id='gc-3' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'>Cult <br>Classics</button><button onclick= `${categoryClick('gc-4')}` id='gc-4' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 lg:text-5xl md:text-5xl text-3xl leading-tight text-white'>Mixed <br>Bag</button></div>";
 
   playButton.style.display = "none";
 
