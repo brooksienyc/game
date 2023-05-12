@@ -13,11 +13,11 @@ It is based on a typical trivia game you may play on a flight, etc. but this is 
 ## Screenshots
 Here are a few screenshots!
 
-[Imgur](https://i.imgur.com/0WtwH47.png)
+<a href="https://imgur.com/0WtwH47"><img style="width: 25%; height: 25%;" src="https://i.imgur.com/0WtwH47.png" title="source: imgur.com" /></a> 
 
-[Imgur](https://i.imgur.com/lzOHcKX.png)
+<a href="https://imgur.com/lzOHcKX"><img style="width: 25%; height: 25%;" src="https://i.imgur.com/lzOHcKX.png" title="source: imgur.com" /></a> 
 
-[Imgur](https://i.imgur.com/RvmnK43.png)
+<a href="https://imgur.com/RvmnK43"><img style="width: 25%; height: 25%;" src="https://i.imgur.com/RvmnK43.png" title="source: imgur.com" /></a>
 
 
 ## Technologies Used
