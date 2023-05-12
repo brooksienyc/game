@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Cast Iron';
+  src: url('/fonts/Cast\ Iron.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PW Yummy Donuts';
+  src: url('/fonts/PWYummyDonuts.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rocky Horror Picture Show';
+  src: url('/fonts/Rocky\ Horror\ Picture\ Show\ Regular.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -47,14 +62,26 @@ h6 {
   right: -100px;
 }
 
-#attribution_block {
-  pointer-events: none;
-}
-
 #play-btn {
   position: relative;
   top: -30px;
   right: -85px;
+}
+
+#gc-1{
+  font-family: 'Cast Iron', cursive;
+}
+
+#gc-2 {
+  font-family: 'Rubik 80s Fade', cursive;
+}
+
+#gc-3 {
+  font-family: 'Rocky Horror Picture Show', cursive;
+}
+
+#gc-4 {
+  font-family: 'PW Yummy Donuts', cursive;
 }
 
 @media only screen and (max-width: 1024px) {

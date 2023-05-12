@@ -48,7 +48,8 @@ const montyPython = [
 // Category Choices
 function playClick() {
   gameCategories.innerHTML =
-    "<h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 sm-hidden pb-4'>Go Ahead and Pick A Topic!</h2><h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 lg:hidden md:hidden mx-auto'>Pick A Topic!</h2><div class='w-full border-t-2 border-solid border-black mx-8 py-4'><button onclick=`${categoryClick('gc-1')}` id='gc-1' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-3xl leading-tight text-white'>Monty <br>Python</button><button onclick=`${categoryClick('gc-2')}` id='gc-2' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-3xl leading-tight text-white'><br>80s</button><button onclick=`${categoryClick('gc-3')}` id='gc-3' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-3xl leading-tight text-white'>Cult <br>Classics</button><button onclick=`${categoryClick('gc-4')}` id='gc-4' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-3xl leading-tight text-white'>Mixed <br>Bag</button></div>";
+    "<h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 sm-hidden pb-4'>Go Ahead and Pick A Topic!</h2><h2 id='gc-h2' class='font-bold text-4xl text-yellow-400 lg:hidden md:hidden mx-auto'>Pick A Topic!</h2><div class='w-full border-t-2 border-solid border-black mx-8 py-4'><button onclick=`${categoryClick('gc-1')}` id='gc-1' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-5xl leading-tight text-white'>Monty <br>Python</button><button onclick=`${categoryClick('gc-2')}` id='gc-2' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-5xl leading-tight text-white'><br>80s</button><button onclick=`${categoryClick('gc-3')}` id='gc-3' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-5xl leading-tight text-white'>Cult <br>Classics</button><button onclick=`${categoryClick('gc-4')}` id='gc-4' class='catButtons lg:w-1/4 md:w-1/4 w-full lg:py-0 md:py-0 py-2 text-5xl leading-tight text-white'>Mixed <br>Bag</button></div>";
+
 
   playButton.style.display = "none";
 
@@ -97,6 +98,7 @@ function montyPythonGame() {
 function checkAnswer(answer, i) {
   const answerIndex = montyPython[i].answer.indexOf(answer);
 
+
   if (currentCategoryId === "gc-1" && montyPython[i].correctAnswer.includes(answer) && questionNum < montyPython.length) {
     Swal.fire({
       icon: 'success',
@@ -114,7 +116,7 @@ function checkAnswer(answer, i) {
   } else if (currentCategoryId === "gc-1" && !montyPython[i].correctAnswer.includes(answer) && questionNum < montyPython.length) {
     Swal.fire({
       icon: 'error',
-      title: `Uh oh! <i style="color:#f27474">${answerIndex + 1}. ${answer}</i> is the wrong answer!`,
+      title: `Uh oh! <i style="color:#f27474">${answerIndex + 1}. ${answer}</i> is the wrong answer! <br> <i style="color:rgb(165,220,134)">${montyPython[i].correctAnswer}</i> is actually the correct answer.`,
       text: 'Keep Going...Next Question!'
     })
     currentQuestionIndex++
@@ -127,8 +129,7 @@ function checkAnswer(answer, i) {
     Swal.fire({
       icon: 'success',
       // Applies the answer's number and the answer in the modal statment
-      title: `Yeah! <i style="color:rgb(165,220,134)">${answerIndex + 1}. ${answer}</i> is it!`,
-      text: 'Keep Going...Next Question!'
+      title: `Yeah! <i style="color:rgb(165,220,134)">${answerIndex + 1}. ${answer}</i> is it!`
     })
     pointsBucket += 20;
     console.log(`I have: ${pointsBucket} points!`);
@@ -139,12 +140,11 @@ function checkAnswer(answer, i) {
 
     setTimeout(() => {
       gameOver();
-    }, 2000)
+    }, 1500)
   } else if (currentCategoryId === "gc-1" && !montyPython[i].correctAnswer.includes(answer) && questionNum === montyPython.length) {
     Swal.fire({
       icon: 'error',
-      title: `Uh oh! <i style="color:#f27474">${answerIndex + 1}. ${answer}</i> is the wrong answer!`,
-      text: 'Keep Going...Next Question!'
+      title: `Uh oh! <i style="color:#f27474">${answerIndex + 1}. ${answer}</i> is the wrong answer! <br> <i style="color:rgb(165,220,134)">${montyPython[i].correctAnswer}</i> is actually the correct answer.`
     })
     currentQuestionIndex++
     console.log(currentQuestionIndex);
@@ -152,7 +152,7 @@ function checkAnswer(answer, i) {
     console.log(questionNum);
     setTimeout(() => {
       gameOver();
-    }, 2000)
+    }, 1500)
   }
 }
 
@@ -164,16 +164,16 @@ function gameOver() {
     Swal.fire({
       icon: 'success',
       title: `Game Over! Your total score is <em>${pointsBucket}%</em>! Great Stuff!`,
-      footer: '<button onclick=`${playAgain()}` class="cursor-pointer rounded-full py-2 px-4 bg-black border-black text-center text-white hover:bg-white hover:text-black">Double Your Luck?</button>',
-      confirmButtonText: '<button onclick=`${playAgain()}`>Ok</button>'
+      confirmButtonText: '<button onclick=`${playAgain()}`>Ok</button>',
+      footer: '<button onclick=`${playAgain()}` class="cursor-pointer rounded-full py-2 px-4 bg-black border-black text-center text-white hover:bg-white hover:text-black">Double Your Luck?</button>'
     })
     // Bad Score
   } else if (currentCategoryId === "gc-1" && questionNum > montyPython.length && pointsBucket < 80) {
     Swal.fire({
       icon: 'error',
       title: `Game Over! Your total score is ${pointsBucket}%! Sorry, you lost.`,
-      footer: '<button onclick=`${playAgain()}` class="cursor-pointer rounded-full py-2 px-4 bg-black border-black text-center text-white hover:bg-white hover:text-black">Maybe Ya Wanna Play Again?</button>',
-      confirmButtonText: '<button onclick=`${playAgain()}`>Ok</button>'
+      confirmButtonText: '<button onclick=`${playAgain()}`>Ok</button>',
+      footer: '<button onclick=`${playAgain()}` class="cursor-pointer rounded-full py-2 px-4 bg-black border-black text-center text-white hover:bg-white hover:text-black">Maybe Ya Wanna Play Again?</button>'
     })
   }
 }
