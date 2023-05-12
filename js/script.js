@@ -1,5 +1,3 @@
-// sweetAlerts class for OK button: swal2-confirm swal2-styled
-
 
 // Variable Declarations and Expressive Functions
 const playButton = document.getElementById("play-btn");
@@ -8,7 +6,6 @@ const gameContent = document.getElementById("game-content");
 const catButtons = document.querySelectorAll(".catButtons");
 
 let pointsBucket = 0;
-let submittedAnswers = [];
 let questionNum = 0;
 let currentCategoryId = "";
 let currentQuestionIndex = null;
@@ -19,28 +16,28 @@ let currentQuestionIndex = null;
 const montyPython = [
   {
     question: "Who gives the 'What is your name, What is your quest...' riddle to Sir Lancelot?",
-    answer: ["Sir Gallahad", "A Bridgekeeper", "Maid Marion", "Knights who say Ni"],
+    answer: ["Sir Galahad", "A Bridgekeeper", "Maid Marian", "Knights who say Ni"],
     correctAnswer: "A Bridgekeeper"
   },
   {
-    question: "What happens to the Black Knight to make him say 'Come back I'll bite your legs off' ",
+    question: "What happens to the Black Knight to make him say 'Come back I'll bite your legs off'?",
     answer: ["He is reduced to a torso", "He misspeaks", "He thinks he is an animal", "He is making a joke"],
     correctAnswer: "He is reduced to a torso."
   },
   {
-    question: "Question 3",
-    answer: ["Question 3-0", "Question 3-1", "Question 3-2", "Question 3-3"],
-    correctAnswer: "Question 3-2"
+    question: "What is the only thing Prince Herbert wants to do?",
+    answer: ["Sleep", "Cry", "Sing", "Eat"],
+    correctAnswer: "Sing"
   },
   {
-    question: "Question 4",
-    answer: ["Question 4-0", "Question 4-1", "Question 4-2", "Question 4-3"],
-    correctAnswer: "Question 4-2"
+    question: "What killed everyone at the dinner party in <i>The Meaning of Life</i>?",
+    answer: ["Risotto", "Lemon Meringue", "Salmon Mousse", "Soufflé"],
+    correctAnswer: "Salmon Mousse"
   },
   {
-    question: "Question 5",
-    answer: ["Question 5-0", "Question 5-1", "Question 5-2", "Question 5-3"],
-    correctAnswer: "Question 5-2"
+    question: "To battle the <i>Killer Rabbit</i> what did King Arthur say to use?",
+    answer: ["The Sacred Herring of Rome", "The Holy Grail", "Excalibur", "The Holy Hand Grenade of Antioch"],
+    correctAnswer: "The Holy Hand Grenade of Antioch"
   }
 ]
 
@@ -61,7 +58,7 @@ function playClick() {
 
 function categoryClick(id) {
   currentCategoryId = id;
-  // if Monty Python
+  // if Monty Python will start Question 1
   if (id === "gc-1") {
     console.log("I clicked Monty Python");
     currentQuestionIndex = 0;
@@ -101,7 +98,6 @@ function checkAnswer(answer, i) {
   const answerIndex = montyPython[i].answer.indexOf(answer);
 
   if (currentCategoryId === "gc-1" && montyPython[i].correctAnswer.includes(answer) && questionNum < montyPython.length) {
-    // alert(`Yeah! ${answer} is it!`);
     Swal.fire({
       icon: 'success',
       // Applies the answer's number and the answer in the modal statment
@@ -116,7 +112,6 @@ function checkAnswer(answer, i) {
     console.log(questionNum);
     montyPythonGame(currentQuestionIndex);
   } else if (currentCategoryId === "gc-1" && !montyPython[i].correctAnswer.includes(answer) && questionNum < montyPython.length) {
-    // alert(`Uh Oh! ${answer} is the wrong answer!`);
     Swal.fire({
       icon: 'error',
       title: `Uh oh! <i style="color:#f27474">${answerIndex + 1}. ${answer}</i> is the wrong answer!`,
@@ -127,16 +122,53 @@ function checkAnswer(answer, i) {
     questionNum++
     console.log(questionNum);
     montyPythonGame(currentQuestionIndex);
-  } else if (questionNum === montyPython.length && pointsBucket >= 80) {
-    // alert(`Game Over! Your total score is ${pointsBucket}. Try Again `);
+  } else if (currentCategoryId === "gc-1" && montyPython[i].correctAnswer.includes(answer) && questionNum === montyPython.length) {
+    console.log(`Question Number: ${questionNum} and Monty Python array length is: ${montyPython.length}`)
     Swal.fire({
       icon: 'success',
-      title: `Game Over! Your total score is <em>${pointsBucket}%</em>!`,
+      // Applies the answer's number and the answer in the modal statment
+      title: `Yeah! <i style="color:rgb(165,220,134)">${answerIndex + 1}. ${answer}</i> is it!`,
+      text: 'Keep Going...Next Question!'
+    })
+    pointsBucket += 20;
+    console.log(`I have: ${pointsBucket} points!`);
+    currentQuestionIndex++;
+    console.log(currentQuestionIndex);
+    questionNum++
+    console.log(questionNum);
+
+    setTimeout(() => {
+      gameOver();
+    }, 2000)
+  } else if (currentCategoryId === "gc-1" && !montyPython[i].correctAnswer.includes(answer) && questionNum === montyPython.length) {
+    Swal.fire({
+      icon: 'error',
+      title: `Uh oh! <i style="color:#f27474">${answerIndex + 1}. ${answer}</i> is the wrong answer!`,
+      text: 'Keep Going...Next Question!'
+    })
+    currentQuestionIndex++
+    console.log(currentQuestionIndex);
+    questionNum++
+    console.log(questionNum);
+    setTimeout(() => {
+      gameOver();
+    }, 2000)
+  }
+}
+
+// End the Game 
+function gameOver() {
+  // Good Score
+  if (currentCategoryId === "gc-1" && questionNum > montyPython.length && pointsBucket >= 80) {
+    console.log(`Question Number: ${questionNum} and Monty Python array length is: ${montyPython.length}`)
+    Swal.fire({
+      icon: 'success',
+      title: `Game Over! Your total score is <em>${pointsBucket}%</em>! Great Stuff!`,
       footer: '<button onclick=`${playAgain()}` class="cursor-pointer rounded-full py-2 px-4 bg-black border-black text-center text-white hover:bg-white hover:text-black">Double Your Luck?</button>',
       confirmButtonText: '<button onclick=`${playAgain()}`>Ok</button>'
     })
-  } else {
-    // alert(`Game Over! Your total score is ${pointsBucket}. Try Again `);
+    // Bad Score
+  } else if (currentCategoryId === "gc-1" && questionNum > montyPython.length && pointsBucket < 80) {
     Swal.fire({
       icon: 'error',
       title: `Game Over! Your total score is ${pointsBucket}%! Sorry, you lost.`,
