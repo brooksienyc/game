@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Cast Iron';
+  src: url('/fonts/Cast\ Iron.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PW Yummy Donuts';
+  src: url('/fonts/PWYummyDonuts.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rocky Horror Picture Show';
+  src: url('/fonts/Rocky\ Horror\ Picture\ Show\ Regular.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  background-color: rgb(250, 56, 63);
+}
+
+button.swal2-styled.swal2-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: yellow ;
+  border: 1px solid yellow;
+  color: black;
+  font-size: 1em;
+}
+
+button.swal2-styled.swal2-confirm:hover {
+  background-color: black;
+  color: yellow;
+}
+
+button.swal2-styled.swal2-confirm:focus {
+  box-shadow: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Crimson Text', serif;
+}
+
+#h1-alt {
+  font-family: 'Oleo Script', cursive;
+  position: relative;
+  top: -30px;
+  right: -100px;
+}
+
+#play-btn {
+  position: relative;
+  top: -30px;
+  right: -85px;
+}
+
+#gc-1{
+  font-family: 'Cast Iron', cursive;
+}
+
+#gc-2 {
+  font-family: 'Rubik 80s Fade', cursive;
+}
+
+#gc-3 {
+  font-family: 'Rocky Horror Picture Show', cursive;
+}
+
+#gc-4 {
+  font-family: 'PW Yummy Donuts', cursive;
+}
+
+@media only screen and (max-width: 1024px) {
+  .sm-hidden, .md-hidden {
+    display: none;
+  }
+
+  #h1-main {
+    text-align: center;
+  }
+
+  #h1-alt {
+    right: 0px;
+    text-align: center;
+  }
+
+  #play-btn {
+    right: -100px;
+  }
+
+  .catButtons {
+    text-align: left;
+    margin-left: 1.5rem;
+  }
+
+  br {
+    display: none;
+  }
+}
+
+/* @media only screen and (max-width: 768px) {
+  #play-btn {
+    right: -100px;
+  }
+
+} */

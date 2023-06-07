@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Night Trivia</title>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <!-- Base View -->
+    <div class="w-full h-64 bg-yellow-400 flex flex-wrap">
+        <div class="lg:w-1/4 md-hidden sm-hidden"></div>
+        <div class="mx-auto rounded-lg lg:w-1/4 md:w-1/2 w-full h-full pointer-events-none">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_tzxivedq.json" background="transparent"
+                speed="1" style="width: 300px; height: 300px; float:right;" loop autoplay></lottie-player>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full">
+            <h1 id="h1-main" class="text-6xl w-full lg:pt-4 md:pt-4 pt-12">Movie Night <span id="h1-alt"
+                    class="text-5xl">Trivia</span></h1>
+            <button id="play-btn"
+                class="cursor-pointer rounded-full hover:bg-white hover:text-black py-2 px-4 bg-black text-center text-white lg:w-1/3 md:w-1/2 w-1/2">GODSPEED</button>
+        </div>
+        <div class="lg:w-1/4 md-hidden sm-hidden"></div>
+    </div>
+    <!-- Categories -->
+    <div id="game-categories"
+        class="mx-auto lg:w-2/3 md:w-2/3 w-full lg:mt-16 md:mt-16 mt-56 flex flex-wrap lg:justify-center md:justify-center justify-start lg:items-center md:items-center lg:text md:text-center text-left">
+    </div>
+    <!-- Content -->
+    <div id="game-content"
+        class="mx-auto lg:w-2/3 md:w-2/3 w-full lg:mt-16 md:mt-16 mt-56 flex flex-wrap justify-start text-left"
+        style="display:none" </div>
+
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script
+            src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+</body>
+
+</html>
